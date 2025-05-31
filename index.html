@@ -52,7 +52,8 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">MIMIC: Generative Agents Mimicking Diverse Personality Traits for Game Testing Using Large Language Model</h1>
+            <h1 class="title is-1 publication-title">MIMIC: Integrating Diverse Personality Traits for
+              Better Game Testing Using Large Language Model</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -148,10 +149,10 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Modern video games pose significant challenges for traditional automated testing algorithms, yet intensive testing is crucial to ensure game quality. To address these challenges, researchers designed gaming agents using Reinforcement Learning, Imitation Learning, or Large Language Models. However, these agents often neglect the diverse strategies employed by human players due to their different personalities, resulting in repetitive solutions in similar situations. Without mimicking varied gaming strategies, these agents struggle to uncover edge cases or trigger diverse in-game interactions.
+            Modern video games pose significant challenges for traditional automated testing algorithms, yet intensive testing is crucial to ensure game quality. To address these challenges, researchers designed gaming agents using Reinforcement Learning, Imitation Learning, or Large Language Models. However, these agents often neglect the diverse strategies employed by human players due to their different personalities, resulting in repetitive solutions in similar situations. Without mimicking varied gaming strategies, these agents struggle to trigger diverse in-game interactions, uncover edge cases, or trigger diverse in-game interactions.
           </p>
           <p>
-            In this paper, we present MIMIC a novel framework that integrates diverse personality traits into gaming agents, enabling them to adopt different gaming strategies. By mimicking different playstyles, MIMIC can achieve higher test coverage and richer in-game interactions across different games. It also outperforms state-of-the-art agents in Minecraft by achieving higher task completion rate and providing more diverse solutions. These results highlight MIMIC's significant potential for effective game testing.
+            In this paper, we present MIMIC, a novel framework that integrates diverse personality traits into gaming agents, enabling them to adopt different gaming strategies for similar situations. By mimicking different playstyles, MIMIC can achieve higher test coverage and richer in-game interactions across different games. It also outperforms state-of-the-art agents in Minecraft by achieving a higher task completion rate and providing more diverse solutions. These results highlight MIMIC's significant potential for effective game testing.
           </p>
         </div>
       </div>
@@ -180,6 +181,55 @@
             The Executor executes the action plan in the game and collects the execution results.
             The execution results are then input to the Action Summarizer to generate the summaries that are then scored into the Memory System to guide the planning in future iterations.
             In the following, we discuss the detailed design of these four components.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Overview -->
+
+<!-- Motivating Example -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Motivating Example</h2>
+        <div class="content has-text-justified">
+          <p>
+            The task, Obtain 1 diamond, is long-hailed as a significant challenge in the community, which is also the focus task of the NeurIPS MineRL Competition. It requires completing at least 13 sub-goals in sequence, each with multiple valid variants, making it a long-horizon task that typically takes humans over ten minutes to solve. Players must also handle dynamic requirements posed by the game, such as hunger or safety, further expanding the solution space.
+          </p>
+          <p>
+            Existing gaming agents are optimized for effective task completion, often resulting in homogeneous and repetitive behaviours.
+            For example, in our evaluation, we observed that ODYSSEY, a state-of-the-art LLM-based agent, consistently followed a single optimized path to obtain a diamond regardless of variations in environments and events triggered in different runs.
+            While these agents can achieve high task completion rates, their behaviours diverge from how human players play the game.
+            Unlike these agents, human players rarely pursue a task in a strictly optimized manner.
+            Instead, they exhibit adaptive and diverse behaviours in response to spontaneous in-game events, shaped by their personality traits.
+            For example, an aggressive player attempting to obtain a diamond may still combat with creatures to collect dropped items, even when such actions are not directly beneficial to the primary task.
+            As a result, the existing gaming agents fail to emulate the diverse and adaptive real-world player behaviours, limiting their ability to cover the wide range of unpredictable in-game scenarios and reducing their overall effectiveness for game testing.
+          </p>
+          <p>
+            This motivates us to propose MIMIC,
+            an LLM-based agent framework that integrates personality profiles into the core planning process.
+            Unlike existing agents that narrowly pursue optimal action sequences,
+            MIMIC leverages recent advances in LLMs capable of simulating consistent personality traits to model gameplay behaviours that more closely resemble those of real human players.
+            By conditioning its dynamic Planner on distinct personality prompts, MIMIC generates strategies that are task-oriented and driven by personality-specific tendencies.
+            This enables it to pursue goals while continuously responding to in-game events in a manner consistent with a player of that personality, leading to more diverse, realistic, and interaction-rich testing trajectories.
+          </p>
+          <p>
+            For example, in finishing the Obtain 1 Diamond task, our aggressive agent dedicated 21.52% of its actions to combat, frequently upgrading armour and engaging a variety of creatures.
+            In contrast, the cautious agent avoided combat entirely, prioritizing safety by crafting torches before mining. Meanwhile, the adrenaline-seeking agent actively crafted swords and explored high-risk areas to encounter enemies, reflecting a strong preference for challenge-oriented interactions.
+            These results demonstrate that by integrating personality into our gaming agent, MIMIC can generate meaningful actions in response to various environments according to the specified personality, driving exploration towards more diverse scenarios.
+          </p>
+          <p>
+            Furthermore, human decision-making is influenced not only by personality but also by experience and personal preferences.
+            To model this, we introduce a Memory System that records past actions and outcomes.
+            During planning, the system retrieves relevant and preferred memories, filtered by personality alignment, to help guide the agent's decisions in a consistent, human-like manner.
+          </p>
+          <p>
+            By combining personality-driven planning with memory-aware decision-making,
+            MIMIC delivers a novel testing framework that mimics the behavioural diversity of human players
+            and enables border exploration of in-game scenarios.
           </p>
         </div>
       </div>
@@ -310,12 +360,8 @@
 <!--&lt;!&ndash; End video carousel &ndash;&gt;-->
 
 
-
-
-
-
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<section class="hero is-small is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Prompts</h2>
@@ -324,6 +370,30 @@
       </div>
     </div>
   </section>
+<!--End paper poster -->
+
+<!-- Paper poster -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Parameters for Dungeon Adventures</h2>
+      <iframe  src="static/pdfs/Parameters_for_Dungeon_Adventures.pdf" width="100%" height="1000">
+      </iframe>
+    </div>
+  </div>
+</section>
+<!--End paper poster -->
+
+<!-- Paper poster -->
+<section class="hero is-small is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Parameters for Shattered Pixel Dungeon</h2>
+      <iframe  src="static/pdfs/Parameters_for_Shattered_Pixel_Dungeon.pdf" width="100%" height="1000">
+      </iframe>
+    </div>
+  </div>
+</section>
 <!--End paper poster -->
 
 
