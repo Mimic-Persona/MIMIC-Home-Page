@@ -5,7 +5,7 @@ This is an academic paper project page for:
 Testing Using Large Language Model**
 
 Here is the link to the webpage:
-https://mimic-persona.github.io/MIMIC_Home_Page/
+https://mimic-persona.github.io/MIMIC-Home-Page/
 
 ## Acknowledgments
 This project page was adopted from the template [Academic-project-page-template](https://github.com/eliahuhorwitz/Academic-project-page-template).
