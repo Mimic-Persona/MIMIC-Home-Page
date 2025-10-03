@@ -57,31 +57,31 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://github.com/Mimic-Persona" target="_blank">MIMIC-Persona</a></span>
-<!--                <span class="author-block">-->
-<!--                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a>,</span>-->
-<!--                  <span class="author-block">-->
-<!--                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>-->
-<!--                  </span>-->
+                <a href="https://github.com/ByronChen12138" target="_blank">Yifei Chen</a>,</span>
+                <span class="author-block">
+                  <a href="https://habchisarra.github.io/" target="_blank">Sarra Habchi</a>,</span>
+                  <span class="author-block">
+                    <a href="https://liliweise.github.io/" target="_blank">Lili Wei</a>
+                  </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">MIMIC<br>2025</span>
+                    <span class="author-block">Accepted by the 40th IEEE/ACM International Conference on Automated Software Engineering<br>ASE 2025</span>
 <!--                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>-->
                   </div>
 
-<!--                  <div class="column has-text-centered">-->
-<!--                    <div class="publication-links">-->
-<!--                         &lt;!&ndash; Arxiv PDF link &ndash;&gt;-->
-<!--                      <span class="link-block">-->
-<!--                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"-->
-<!--                        class="external-link button is-normal is-rounded is-dark">-->
-<!--                        <span class="icon">-->
-<!--                          <i class="fas fa-file-pdf"></i>-->
-<!--                        </span>-->
-<!--                        <span>Paper</span>-->
-<!--                      </a>-->
-<!--                    </span>-->
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2510.01635" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
 
 <!--                    &lt;!&ndash; Supplementary PDF link &ndash;&gt;-->
 <!--                    <span class="link-block">-->
@@ -105,16 +105,16 @@
                   </a>
                 </span>
 
-<!--                &lt;!&ndash; ArXiv abstract Link &ndash;&gt;-->
-<!--                <span class="link-block">-->
-<!--                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"-->
-<!--                  class="external-link button is-normal is-rounded is-dark">-->
-<!--                  <span class="icon">-->
-<!--                    <i class="ai ai-arxiv"></i>-->
-<!--                  </span>-->
-<!--                  <span>arXiv</span>-->
-<!--                </a>-->
-<!--              </span>-->
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2510.01635" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
             </div>
           </div>
         </div>
@@ -149,10 +149,26 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Modern video games pose significant challenges for traditional automated testing algorithms, yet intensive testing is crucial to ensure game quality. To address these challenges, researchers designed gaming agents using Reinforcement Learning, Imitation Learning, or Large Language Models. However, these agents often neglect the diverse strategies employed by human players due to their different personalities, resulting in repetitive solutions in similar situations. Without mimicking varied gaming strategies, these agents struggle to trigger diverse in-game interactions, uncover edge cases, or trigger diverse in-game interactions.
+            Modern video games pose significant challenges for traditional automated testing algorithms,
+            yet intensive testing is crucial to ensure game quality.
+            To address these challenges, researchers designed gaming agents using Reinforcement Learning,
+            Imitation Learning, or Large Language Models.
+            However,
+            these agents often neglect the diverse strategies
+            employed by human players due to their different personalities,
+            resulting in repetitive solutions in similar situations.
+            Without mimicking varied gaming strategies,
+            these agents struggle to trigger diverse in-game interactions or uncover edge cases.
           </p>
           <p>
-            In this paper, we present MIMIC, a novel framework that integrates diverse personality traits into gaming agents, enabling them to adopt different gaming strategies for similar situations. By mimicking different playstyles, MIMIC can achieve higher test coverage and richer in-game interactions across different games. It also outperforms state-of-the-art agents in Minecraft by achieving a higher task completion rate and providing more diverse solutions. These results highlight MIMIC's significant potential for effective game testing.
+            In this paper, we present MIMIC,
+            a novel framework that integrates diverse personality traits into gaming agents,
+            enabling them to adopt different gaming strategies for similar situations.
+            By mimicking different playstyles,
+            MIMIC can achieve higher test coverage and richer in-game interactions across different games.
+            It also outperforms state-of-the-art agents in Minecraft
+            by achieving a higher task completion rate and providing more diverse solutions.
+            These results highlight MIMIC's significant potential for effective game testing.
           </p>
         </div>
       </div>
@@ -170,17 +186,17 @@
         <div class="content has-text-justified">
           <img src="static/images/img.png" alt="MIMIC Overview">
           <p>
-            MIMIC consists of four components: the Planner, the Memory System, the Action Summarizer, and the Action Executor.
+            MIMIC consists of four components: the Planner, Action Summarizer, Action Executor, and Memory System.
           </p>
           <p>
-            The Planner is the core component of MIMIC that generates action plans according to the pre-defined personality trait as well as the past actions.
-            The Memory System stores memories summarizing past actions and their outcomes, which are then provided to the Planner.
-            These memories are generated by the Action Summarizer by analyzing actions and their execution outcomes retrieved from the games.
-            MIMIC also contains an Action Executor that translates the generated plans into executions in the games.
-            In summary, in one Action Iteration, the planner generates an action plan according to the integrated personality trait and the past actions and passes the plan to the Executor.
-            The Executor executes the action plan in the game and collects the execution results.
-            The execution results are then input to the Action Summarizer to generate the summaries that are then scored into the Memory System to guide the planning in future iterations.
-            In the following, we discuss the detailed design of these four components.
+            The Planner is the core module,
+            generating action plans from predefined personality traits and past experiences.
+            These experiences are stored in the Memory System,
+            with the Action Summarizer analyzing execution results to produce summaries.
+            The Action Executor then translates the Planner’s output into in-game actions.
+            In each action iteration, the Planner produces a plan, the Executor executes it,
+            and the Summarizer records feedback as new memory to guide future planning.
+            The following sections detail each component.
           </p>
         </div>
       </div>
@@ -364,8 +380,8 @@
 <section class="hero is-small is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title">Prompts</h2>
-      <iframe  src="static/pdfs/Prompts_for_MIMIC.pdf" width="100%" height="1000">
+      <h2 class="title">Planner Prompts</h2>
+      <iframe src="static/pdfs/Prompts_of_the_Planner_for_MIMIC.pdf" width="100%" height="1000">
           </iframe>
       </div>
     </div>
@@ -400,8 +416,17 @@
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <h2 class="title">BibTeX </h2>
+      <p>To be published in the Proceedings of the 40th IEEE/ACM International Conference on Automated Software Engineering, ASE'25</p>
+      <pre><code>@misc{MIMIC_YIFEI_ASE_2025,
+      title={MIMIC: Integrating Diverse Personality Traits for Better Game Testing Using Large Language Model},
+      author={Yifei Chen and Sarra Habchi and Lili Wei},
+      year={2025},
+      eprint={2510.01635},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE},
+      url={https://arxiv.org/abs/2510.01635},
+}</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
