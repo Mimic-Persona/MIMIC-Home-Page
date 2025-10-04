@@ -133,5 +133,9 @@ body {
   font-size: smaller;
 }
 
-
+.map-container {
+    width: 60%;
+    height: 30%;
+    margin: 0 auto;
+}
 
